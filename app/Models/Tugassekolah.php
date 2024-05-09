@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Absen extends Model
+class Tugassekolah extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'tanggal',
-        'kelasjurusan_ta_id',
-        'siswakelas_id',
-        'absensi',
-        'keterangan',
+        'pelajaran_id',
+        'tgl',
+        'deskripsi',
+        'tgl_pengumpulan',
+        'isi_tugas',
+        'siswa_id',
+        'guru_id',
     ];
 }
