@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('jumlah_penarikan')->nullable();
             $table->integer('total_penarikan')->nullable();
             $table->integer('siswa_id');
-            $table->integer('kelasjurusan_ta_id');
+            $table->integer('kelas_id');
             $table->timestamps();
         });
     }

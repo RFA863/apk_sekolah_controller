@@ -11,9 +11,19 @@ class Absen extends Model
 
     protected $fillable = [
         'tanggal',
-        'kelasjurusan_ta_id',
-        'siswakelas_id',
         'absensi',
         'keterangan',
+        'siswa_id',
+        'kelas_id',
     ];
+
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }

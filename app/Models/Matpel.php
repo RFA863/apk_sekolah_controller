@@ -12,4 +12,9 @@ class Matpel extends Model
     protected $fillable = [
         'pelajaran'
     ];
+
+    public function tugassekolah()
+    {
+        return $this->hasMany(Tugassekolah::class);
+    }
 }

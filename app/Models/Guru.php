@@ -12,4 +12,14 @@ class Guru extends Model
     protected $fillable = [
         'nama', 'alamat', 'email', 'telepon'
     ];
+
+    public function konsultasi_bk()
+    {
+        return $this->hasMany(Konsultasi_bk::class);
+    }
+
+    public function tugassekolah()
+    {
+        return $this->hasMany(Tugassekolah::class);
+    }
 }

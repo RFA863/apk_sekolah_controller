@@ -15,7 +15,17 @@ class Konsultasi_bk extends Model
         'status',
         'tempat',
         'jam',
-        'siswakelas_id',
+        'siswa_id',
         'guru_id',
     ];
+
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
+
+    public function guru()
+    {
+        return $this->belongsTo(Guru::class);
+    }
 }

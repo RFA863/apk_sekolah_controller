@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('judul', 100);
             $table->date('tanggal');
             $table->text('isi');
-            $table->integer('siswakelas_id');
+            $table->integer('siswa_id');
             $table->timestamps();
         });
     }

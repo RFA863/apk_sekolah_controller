@@ -12,4 +12,29 @@ class Siswa extends Model
     protected $fillable = [
         'nama', 'alamat', 'email', 'telepon'
     ];
+
+    public function absen()
+    {
+        return $this->hasMany(Absen::class);
+    }
+
+    public function note()
+    {
+        return $this->hasMany(Note::class);
+    }
+
+    public function konsultasi_bk()
+    {
+        return $this->hasMany(Konsultasi_bk::class);
+    }
+
+    public function tugassekolah()
+    {
+        return $this->hasMany(Tugassekolah::class);
+    }
+
+    public function tabungan()
+    {
+        return $this->hasOne(Tabungan::class);
+    }
 }

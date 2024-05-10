@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('status', 100);
             $table->string('tempat', 100);
             $table->time('jam');
-            $table->integer('siswakelas_id');
+            $table->integer('siswa_id');
             $table->integer('guru_id');
             $table->timestamps();
         });

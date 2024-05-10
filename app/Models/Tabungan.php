@@ -12,8 +12,20 @@ class Tabungan extends Model
     protected $fillable = [
         'nominal',
         'tanggal',
+        'jumlah_tabungan',
         'jumlah_penarikan',
+        'total_penarikan',
         'siswa_id',
-        'kelasjurusan_ta_id'
+        'kelas_id'
     ];
+
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class);
+    }
 }

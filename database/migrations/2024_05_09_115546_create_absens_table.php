@@ -16,8 +16,8 @@ return new class extends Migration
             $table->date('tanggal');
             $table->enum('absensi', ['hadir', 'izin', 'sakit', 'alpha']);
             $table->text('keterangan')->nullable();
-            $table->integer('kelasjurusan_ta_id');
-            $table->integer('siswakelas_id');
+            $table->integer('kelas_id');
+            $table->integer('siswa_id');
             $table->timestamps();
         });
     }

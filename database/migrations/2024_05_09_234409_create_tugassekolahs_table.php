@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('tgl_pengumpulan');
             $table->string('deskripsi', 150);
             $table->text('isi_tugas');
-            $table->integer('pelajaran_id');
+            $table->integer('matpel_id');
             $table->integer('siswa_id');
             $table->integer('guru_id');
             $table->timestamps();
