@@ -60,7 +60,9 @@ class AbsenController extends Controller
      */
     public function show(string $id)
     {
-        $getData = Absen::findOrFail($id);
+        $getData = Absen::with('siswa', 'kelas')->when(request()->q, function ($query) {
+            $query->where('absensi', 'like', '%' . request()->q . '%');
+        })->findOrFail($id);
 
         if (!$getData) {
             return response()->json(new DefaultResource(false, 'Not Found', null), 404);

@@ -64,7 +64,9 @@ class TugasSekolahController extends Controller
      */
     public function show(string $id)
     {
-        $getData = Tugassekolah::findOrFail($id);
+        $getData = Tugassekolah::with('siswa', 'guru', 'matpel')->when(request()->q, function ($query) {
+            $query->where('isi_tugas', 'like', '%' . request()->q . '%');
+        })->findOrFail($id);
 
         if (!$getData) {
             return response()->json(new DefaultResource(false, 'Not Found', null), 404);

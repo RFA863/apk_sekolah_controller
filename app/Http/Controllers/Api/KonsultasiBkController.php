@@ -64,7 +64,9 @@ class KonsultasiBkController extends Controller
      */
     public function show(string $id)
     {
-        $getData = Konsultasi_bk::findOrFail($id);
+        $getData = Konsultasi_bk::with('siswa', 'guru')->when(request()->q, function ($query) {
+            $query->where('tujuan', 'like', '%' . request()->q . '%');
+        })->findOrFail($id);
 
         if (!$getData) {
             return response()->json(new DefaultResource(false, 'Not Found', null), 404);

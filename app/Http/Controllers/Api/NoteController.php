@@ -58,7 +58,9 @@ class NoteController extends Controller
      */
     public function show(string $id)
     {
-        $getData = Note::findOrFail($id);
+        $getData = Note::with('siswa')->when(request()->q, function ($query) {
+            $query->where('judul', 'like', '%' . request()->q . '%');
+        })->findOrFail($id);
 
         if (!$getData) {
             return response()->json(new DefaultResource(false, 'Not Found',  null), 404);
